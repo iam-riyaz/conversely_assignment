@@ -8,7 +8,6 @@ export const  authentication = (req, res, next) => {
   }
   else{
     const mainToken= token.split(" ")[1]
-    console.log(mainToken)
     try {
       const decoded = jwt.verify(mainToken, process.env.JWT_SALT);
       req.user = decoded.user;
