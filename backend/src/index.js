@@ -1,4 +1,4 @@
-import { employeesRoute } from "./routes/employees.route.js"
+import { blogRoute } from "./routes/blog.route.js"
 import {app} from "./utils/server.js"
 
 app.get("/",async(req,res)=>{
@@ -11,4 +11,5 @@ app.get("/",async(req,res)=>{
     }
 })
 
-app.use("/employees",employeesRoute)
+
+app.use("/dev", blogRoute)
