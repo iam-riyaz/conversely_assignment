@@ -12,4 +12,4 @@ app.get("/",async(req,res)=>{
 })
 
 
-app.use("/dev", blogRoute)
+app.use("/", blogRoute)
