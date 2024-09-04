@@ -1,3 +1,4 @@
+import { authRoute } from "./routes/auth.route.js"
 import { blogRoute } from "./routes/blog.route.js"
 import {app} from "./utils/server.js"
 
@@ -13,3 +14,7 @@ app.get("/",async(req,res)=>{
 
 
 app.use("/", blogRoute)
+
+app.use("/auth", authRoute)
+
+

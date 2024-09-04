@@ -2,15 +2,17 @@
 import express from "express";
 
 import * as blogController from "../controllers/blog.controller.js"
+import { authentication } from "../middlewares/authentication.js";
 
 export const blogRoute= express.Router()
 
-blogRoute.get("/posts", blogController.getBlogs)
+blogRoute.get("/posts", authentication, blogController.getBlogs)
 
-blogRoute.post("/posts",blogController.createBlog)
+blogRoute.post("/posts",authentication,blogController.createBlog)
 
-blogRoute.get("/posts/:id", blogController.getSingleBlog)
+blogRoute.get("/posts/:id",authentication, blogController.getSingleBlog)
 
-blogRoute.patch("/posts/:id", blogController.updateBlog)
+blogRoute.patch("/posts/:id",authentication, blogController.updateBlog)
 
-blogRoute.delete("/posts/:id", blogController.deleteBlog)
+blogRoute.delete("/posts/:id",authentication, blogController.deleteBlog)
+
